@@ -4,6 +4,8 @@ from django.test import TestCase
 
 import datetime
 
+from random import randint
+from hello.models import MHttpRequest
 
 class SomeTests(TestCase):
     fixtures = ['test001.json']
@@ -20,3 +22,12 @@ class SomeTests(TestCase):
         self.assertEqual(response.context['skype'], 'simne100')
         self.assertEqual(response.context['other_contacts'],
                          'Other contacts test')
+
+    def test_t2_store_http_reqs(self):
+        murl = "/%d" % randint(1000000,9000000)
+        response = self.client.get(murl)
+        # mm = MHttpRequest.objects.create(meta_QUERY_STRING=murl, meta_CONTENT_LENGTH = 10)
+        # mm.save
+        objs = MHttpRequest.objects.order_by('-rqdate')[0]
+        # print objs.meta_QUERY_STRING
+        self.assertEqual(objs.meta_QUERY_STRING, murl)
