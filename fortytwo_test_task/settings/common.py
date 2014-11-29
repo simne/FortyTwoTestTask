@@ -19,6 +19,10 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 sys.path.append(os.path.join(BASE_DIR, 'apps'))
 sys.path.append(os.path.join(BASE_DIR, 'middlewares'))
 
+FIXTURE_DIRS = (
+    'fortytwo_test_task/initialdata',
+)
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
