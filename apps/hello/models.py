@@ -17,7 +17,7 @@ class MHttpRequest (models.Model):
     post = models.TextField()
     cookies = models.TextField()
     files = models.TextField()
-    meta_CONTENT_LENGTH = models.IntegerField()
+    meta_CONTENT_LENGTH = models.CharField(max_length=128)
     meta_CONTENT_TYPE = models.CharField(max_length=128)
     meta_HTTP_ACCEPT_ENCODING = models.CharField(max_length=128)
     meta_HTTP_ACCEPT_LANGUAGE = models.CharField(max_length=128)
@@ -25,6 +25,7 @@ class MHttpRequest (models.Model):
     meta_HTTP_REFERER = models.TextField()
     meta_HTTP_USER_AGENT = models.CharField(max_length=128)
     meta_QUERY_STRING = models.TextField()
+    meta_PATH_INFO = models.TextField()
     meta_REMOTE_ADDR = models.CharField(max_length=128)
     meta_REMOTE_HOST = models.CharField(max_length=128)
     meta_REMOTE_USER = models.CharField(max_length=128)
@@ -32,4 +33,5 @@ class MHttpRequest (models.Model):
     meta_SERVER_NAME = models.CharField(max_length=128)
     meta_SERVER_PORT = models.CharField(max_length=128)
     rqdate = models.DateTimeField(auto_now_add=True, blank=True)
+    rqdump = models.TextField()
 
