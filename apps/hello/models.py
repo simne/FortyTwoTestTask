@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 
+
 class Developer(models.Model):
     name = models.CharField(max_length=128)
     last_name = models.CharField(max_length=128)
@@ -11,6 +12,7 @@ class Developer(models.Model):
     jabber = models.EmailField()
     skype = models.CharField(max_length=128)
     other_contacts = models.TextField()
+
 
 class MHttpRequest (models.Model):
     get = models.TextField()
@@ -34,4 +36,3 @@ class MHttpRequest (models.Model):
     meta_SERVER_PORT = models.CharField(max_length=128)
     rqdate = models.DateTimeField(auto_now_add=True, blank=True)
     rqdump = models.TextField()
-

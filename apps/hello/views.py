@@ -29,6 +29,7 @@ def index(request):
 from django.shortcuts import get_object_or_404
 from django.views.generic import ListView
 
+
 class ReqList(ListView):
     model = MHttpRequest
     template_name = 'hello/list.html'
