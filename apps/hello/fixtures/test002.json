@@ -1,0 +1,27 @@
+[{
+ "pk": 25, 
+ "model": "hello.mhttprequest", 
+ "fields": {
+  "files": "<MultiValueDict: {}>", 
+  "meta_HTTP_REFERER": "", 
+  "cookies": "{'csrftoken': 'ar8V3zu8YijjNjqqLKLAUvjfnYeUysqM'}", 
+  "meta_SERVER_NAME": "localhost.zt.kiev.ua", 
+  "rqdump": "&lt;WSGIRequest\npath:/list2/",
+  "rqdate": "2014-11-30T20:48:21.498Z", 
+  "meta_HTTP_ACCEPT_ENCODING": "gzip,deflate", 
+  "get": "<QueryDict: {}>", 
+  "meta_REMOTE_USER": "", 
+  "meta_HTTP_ACCEPT_LANGUAGE": "en-us,en;q=0.5", 
+  "meta_REMOTE_ADDR": "127.0.0.1", 
+  "meta_QUERY_STRING": "", 
+  "meta_REMOTE_HOST": "", 
+  "meta_PATH_INFO": "/list2/", 
+  "meta_HTTP_USER_AGENT": "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.0.6) Gecko/20060728 FreeBSD/i386 Firefox/1.5.0.6", 
+  "meta_CONTENT_LENGTH": "", 
+  "meta_CONTENT_TYPE": "text/plain", 
+  "post": "<QueryDict: {}>", 
+  "meta_REQUEST_METHOD": "GET", 
+  "meta_HTTP_HOST": "127.0.0.1:8000", 
+  "meta_SERVER_PORT": "8000"
+ }
+}]

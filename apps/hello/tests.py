@@ -8,10 +8,11 @@ from random import randint
 from hello.models import MHttpRequest
 
 class SomeTests(TestCase):
-    fixtures = ['test001.json']
+    fixtures = ['test001.json', 'test002.json']
 
     def test_t1_show_contacts_on_main_page(self):
         response = self.client.get('/')
+        # print response.context.keys()
         self.assertEqual(response.context['name'], 'Serge')
         self.assertEqual(response.context['last_name'], 'Sergeev')
         self.assertEqual(response.context['date_of_birth'],
@@ -23,8 +24,10 @@ class SomeTests(TestCase):
         self.assertEqual(response.context['other_contacts'],
                          'Other contacts test')
 
-    def test_t2_store_http_reqs(self):
+    def test_t3_store_http_reqs(self):
         murl = "/%d" % randint(1000000,9000000)
         response = self.client.get(murl)
         objs = MHttpRequest.objects.order_by('-rqdate')[0]
+        # print objs.__dict__.keys()
         self.assertEqual(objs.meta_PATH_INFO, unicode(murl))
+

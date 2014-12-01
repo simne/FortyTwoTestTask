@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{%block extra_head %}
+<link rel="stylesheet" href="/static/css/a42cctest.css">
+{% endblock  %}
+{% block content %}
+{{ block.super }}
+<h3> 
+    42 Coffee Cups Test Assignment
+</h3>
+
+<div  id="main_bodleft">
+<br/>
+publisher: {{ publisher }}<br/>
+{{ name }}<br/>
+{{ last_name }}<br/>
+{{ date_of_birth }}<br/>
+Bio:<br/>{{ bio }}
+
+</div>
+<div  id="main_bodright">
+Contacts<br/><br/>
+
+Email: {{ email }}<br/>
+
+Jabber: {{ jabber }}<br/>
+
+Skype: {{ skype }}<br/>
+
+Other contacts:<br/> {{ other_contacts }}
+</div>
+<div  id="main_bodcenter">
+{% for rq in mhttprequest_list %}
+            {{ rq.meta_PATH_INFO }} {{ rq.meta_REMOTE_ADDR }} {{ rq.rqdate }} <br/>
+        {% endfor %}
+</div>
+
+{% endblock %}
+

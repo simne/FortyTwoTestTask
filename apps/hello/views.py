@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 
-from .models import Developer
+from .models import Developer, MHttpRequest
 
 from django.http import HttpResponse
 from django.template import loader, Context
@@ -25,3 +25,20 @@ def index(request):
 
     response.write(t.render(c))
     return response
+
+from django.shortcuts import get_object_or_404
+from django.views.generic import ListView
+
+class ReqList(ListView):
+    model = MHttpRequest
+    template_name = 'hello/list.html'
+
+    def get_queryset(self):
+        return MHttpRequest.objects.all().order_by('-rqdate')[0:10]
+
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super(ReqList, self).get_context_data(**kwargs)
+        # Add in the publisher
+        context['publisher'] = 'Serge'
+        return context
