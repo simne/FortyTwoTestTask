@@ -1,0 +1,11 @@
+
+body { font-size: 14px; font-family: Georgia,serif; line-height: 
+28px; }
+h3 { font-size: 22px; font-family: Georgia,serif; font-weight: normal; line-height: 
+20px; }
+#main_bodleft, #main_bodright, #main_bodcenter {border: 0; padding:0px 0px; marg
+in: 0px 0px;}
+#main_bodleft { float:left; left: 0px; width:180px; margin-left:5px; }
+#main_bodcenter { margin: 0 13px; margin-left:260px; margin-right:190px; }
+#main_bodright { float:left; width:180px; margin-left:190px; margin-right:0px; }
+
