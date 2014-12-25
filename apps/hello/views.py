@@ -58,10 +58,10 @@ def fupload(request):
         form = DocumentForm(request.POST, request.FILES)
         if form.is_valid():
             newdoc = Developer.objects.get(id=1)
-            print newdoc.imgfile
+            # print newdoc.imgfile
             # Developer(imgfile = request.FILES['imgfile'])
             newdoc.imgfile=request.FILES['imgfile']
-            print request.FILES['imgfile']
+            # print request.FILES['imgfile']
             newdoc.save()
 
             # Redirect to the document list after POST
