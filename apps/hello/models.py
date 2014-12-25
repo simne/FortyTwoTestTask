@@ -12,6 +12,7 @@ class Developer(models.Model):
     jabber = models.EmailField()
     skype = models.CharField(max_length=128)
     other_contacts = models.TextField()
+    imgfile = models.FileField(upload_to='img/%Y/%m/%d', blank=True, null=True)
     def __str__(self):              # __unicode__ on Python 2
         return "%s %s, contacts: email:%s, jabber:%s, skype:%s" % (
             self.name, self.last_name,  self.email, self.jabber, self.skype)

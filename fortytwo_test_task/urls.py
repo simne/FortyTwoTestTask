@@ -30,7 +30,8 @@ urlpatterns = patterns(
     #  context_object_name='latest_poll_list', template_name='base.html' ,
     #  paginate_by=25 ), name='blog2'),
     url(r'^list2/', ReqList.as_view(), name='list2'),
-
+    url(r'^contact/', include('contact.urls')),
+    url(r'^fuploads/', include('hello.urls')),
 )
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
